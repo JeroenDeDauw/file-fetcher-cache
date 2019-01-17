@@ -1,6 +1,6 @@
-# PHP Library Template
+# File Fetcher Cache
 
-[![Build Status](https://travis-ci.org/JeroenDeDauw/new-php-library.svg?branch=master)](https://travis-ci.org/JeroenDeDauw/new-php-library)
+[![Build Status](https://travis-ci.org/JeroenDeDauw/file-fetcher-cache.svg?branch=master)](https://travis-ci.org/JeroenDeDauw/file-fetcher-cache)
 
 Provides simple caching [decorators](https://en.wikipedia.org/wiki/Decorator_pattern)
 for [FileFetcher](https://github.com/JeroenDeDauw/FileFetcher) implementations.
@@ -11,14 +11,14 @@ TODO
 
 ## Installation
 
-To use the UPDATE_NAME library in your project, simply add a dependency on UPDATE/NAME
+To use the File Fetcher Cache library in your project, simply add a dependency on jeroen/file-fetcher-cache
 to your project's `composer.json` file. Here is a minimal example of a `composer.json`
-file that just defines a dependency on UPDATE_NAME 1.x:
+file that just defines a dependency on File Fetcher Cache 1.x:
 
 ```json
 {
     "require": {
-        "UPDATE/NAME": "~1.0"
+        "jeroen/file-fetcher-cache": "~1.0"
     }
 }
 ```
