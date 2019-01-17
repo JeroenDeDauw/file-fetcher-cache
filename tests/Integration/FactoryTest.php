@@ -2,7 +2,7 @@
 
 declare( strict_types = 1 );
 
-namespace FileFetcher\Cache\Tests\Unit;
+namespace FileFetcher\Cache\Tests\Integration;
 
 use FileFetcher\Cache\Factory;
 use FileFetcher\NullFileFetcher;
