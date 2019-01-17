@@ -1,4 +1,4 @@
-# File Fetcher Cache
+# FileFetcher Cache
 
 [![Build Status](https://travis-ci.org/JeroenDeDauw/file-fetcher-cache.svg?branch=master)](https://travis-ci.org/JeroenDeDauw/file-fetcher-cache)
 
@@ -7,7 +7,18 @@ for [FileFetcher](https://github.com/JeroenDeDauw/FileFetcher) implementations.
 
 ## Usage
 
-TODO
+The FileFetcher decorators are constructed via `FileFetcher\Cache\Factory`.
+
+* `$factory->newCachingFetcher()`: Caches file contents via [PSR-16 SimpleCache](https://www.php-fig.org/psr/psr-16/)
+* `$factory->newJeroenSimpleCacheFetcher()`: Caches file contents via [jeroen/simple-cache](https://github.com/JeroenDeDauw/SimpleCache)
+
+Once you constructed a FileFetcher, fetching a file is easy:
+
+```php
+$fileContent = $fileFetcher->fetchFile($fileLocation);
+```
+
+To test your code you can use all the test doubles provided by [FileFetcher](https://github.com/JeroenDeDauw/FileFetcher) itself.
 
 ## Installation
 
