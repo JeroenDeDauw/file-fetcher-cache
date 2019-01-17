@@ -22,9 +22,9 @@ To test your code you can use all the test doubles provided by [FileFetcher](htt
 
 ## Installation
 
-To use the File Fetcher Cache library in your project, simply add a dependency on jeroen/file-fetcher-cache
+To use the FileFetcher Cache library in your project, simply add a dependency on jeroen/file-fetcher-cache
 to your project's `composer.json` file. Here is a minimal example of a `composer.json`
-file that just defines a dependency on File Fetcher Cache 1.x:
+file that just defines a dependency on FileFetcher Cache 1.x:
 
 ```json
 {
