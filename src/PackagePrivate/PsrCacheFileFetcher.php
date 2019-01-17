@@ -19,16 +19,19 @@ class PsrCacheFileFetcher implements FileFetcher {
 
 	private $fileFetcher;
 	private $cache;
+	private $ttl;
 	private $keyBuilder;
 
 	/**
 	 * @param FileFetcher $fileFetcher
 	 * @param CacheInterface $cache
+	 * @param \DateInterval|int|null $ttl
 	 * @param callable|null $keyBuilderFunction Gets the fileUrl (string) and needs to return a valid cache key (string)
 	 */
-	public function __construct( FileFetcher $fileFetcher, CacheInterface $cache, callable $keyBuilderFunction = null ) {
+	public function __construct( FileFetcher $fileFetcher, CacheInterface $cache, $ttl, callable $keyBuilderFunction = null ) {
 		$this->fileFetcher = $fileFetcher;
 		$this->cache = $cache;
+		$this->ttl = $ttl;
 		$this->keyBuilder = $keyBuilderFunction ?? $this->getDefaultKeyBuilder();
 	}
 
@@ -74,7 +77,11 @@ class PsrCacheFileFetcher implements FileFetcher {
 		$fileContents = $this->fileFetcher->fetchFile( $fileUrl );
 
 		try {
-			$this->cache->set( $this->createCacheKey( $fileUrl ), $fileContents );
+			$this->cache->set(
+				$this->createCacheKey( $fileUrl ),
+				$fileContents,
+				$this->ttl
+			);
 		}
 		catch ( CacheException $ex ) {
 		}

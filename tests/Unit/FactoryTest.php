@@ -2,7 +2,7 @@
 
 declare( strict_types = 1 );
 
-namespace FileFetcher\Cache\PackagePrivate;
+namespace FileFetcher\Cache\Tests\Unit;
 
 use FileFetcher\Cache\Factory;
 use FileFetcher\NullFileFetcher;

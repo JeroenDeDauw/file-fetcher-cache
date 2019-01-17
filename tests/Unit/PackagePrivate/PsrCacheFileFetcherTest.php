@@ -25,6 +25,7 @@ class PsrCacheFileFetcherTest extends TestCase {
 
 	private $fileFetcher;
 	private $cache;
+	private $ttl;
 	private $keyBuilder;
 
 	public function setUp() {
@@ -33,6 +34,7 @@ class PsrCacheFileFetcherTest extends TestCase {
 		] );
 
 		$this->cache = $this->newCacheWithFile();
+		$this->ttl = null;
 
 		$this->keyBuilder = function( string $string ): string {
 			return $string;
@@ -54,6 +56,7 @@ class PsrCacheFileFetcherTest extends TestCase {
 		return new PsrCacheFileFetcher(
 			$this->fileFetcher,
 			$this->cache,
+			$this->ttl,
 			$this->keyBuilder
 		);
 	}
@@ -67,7 +70,10 @@ class PsrCacheFileFetcherTest extends TestCase {
 		);
 	}
 
-	private function newNullCache(): CacheInterface {
+	/**
+	 * @return \PHPUnit\Framework\MockObject\MockObject|CacheInterface
+	 */
+	private function newNullCache() {
 		$cache = $this->createMock( CacheInterface::class );
 
 		$cache->expects( $this->any() )
@@ -156,24 +162,23 @@ class PsrCacheFileFetcherTest extends TestCase {
 	 * @dataProvider cacheKeyProvider
 	 */
 	public function testCacheKeyBuilding( string $fileUrl, string $expectedCacheKey ) {
-		$cache = $this->createMock( CacheInterface::class );
+		$this->fileFetcher = new InMemoryFileFetcher( [
+			$fileUrl => $expectedCacheKey
+		] );
 
-		$cache->expects( $this->once() )
+		$this->cache = $this->createMock( CacheInterface::class );
+
+		$this->cache->expects( $this->once() )
 			->method( 'get' )
 			->with( $this->equalTo( $expectedCacheKey ) );
 
-		$cache->expects( $this->once() )
+		$this->cache->expects( $this->once() )
 			->method( 'set' )
 			->with( $this->equalTo( $expectedCacheKey ) );
 
-		$cachingFetcher = new PsrCacheFileFetcher(
-			new InMemoryFileFetcher( [
-				$fileUrl => self::FILE_CONTENT
-			] ),
-			$cache
-		);
+		$this->keyBuilder = null;
 
-		$cachingFetcher->fetchFile( $fileUrl );
+		$this->newCachingFileFetcher()->fetchFile( $fileUrl );
 	}
 
 	public function cacheKeyProvider(): iterable {
@@ -193,6 +198,29 @@ class PsrCacheFileFetcherTest extends TestCase {
 			'ÆntrøpyWins',
 			'__ntr__pyWins-6e250'
 		];
+	}
+
+	/**
+	 * @dataProvider validTtlProvider
+	 */
+	public function testTtlIsPassedToCache( $ttl ) {
+		$this->ttl = $ttl;
+
+		$this->cache = $this->newNullCache();
+
+		$this->cache->expects( $this->once() )
+			->method( 'set' )
+			->with( $this->anything(), $this->anything(), $this->equalTo( $ttl ) );
+
+		$this->newCachingFileFetcher()->fetchFile( self::FILE_URL );
+	}
+
+	public function validTtlProvider(): iterable {
+		yield [ null ];
+		yield [ 0 ];
+		yield [ 1 ];
+		yield [ 100 ];
+		yield [ new \DateInterval( 'P3M' ) ];
 	}
 
 }
