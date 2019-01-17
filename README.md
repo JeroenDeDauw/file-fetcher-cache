@@ -7,7 +7,7 @@ for [FileFetcher](https://github.com/JeroenDeDauw/FileFetcher) implementations.
 
 ## Usage
 
-The FileFetcher decorators are constructed via `FileFetcher\Cache\Factory`.
+The FileFetcher decorators are constructed via [`FileFetcher\Cache\Factory`](src/Factory.php).
 
 * `$factory->newCachingFetcher()`: Caches file contents via [PSR-16 SimpleCache](https://www.php-fig.org/psr/psr-16/)
 * `$factory->newJeroenSimpleCacheFetcher()`: Caches file contents via [jeroen/simple-cache](https://github.com/JeroenDeDauw/SimpleCache)
