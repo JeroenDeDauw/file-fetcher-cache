@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/JeroenDeDauw/new-php-library.svg?branch=master)](https://travis-ci.org/JeroenDeDauw/new-php-library)
 
-This is a template for starting new PHP libraries. Copy or fork to get started quickly.
+Provides simple caching [decorators](https://en.wikipedia.org/wiki/Decorator_pattern)
+for [FileFetcher](https://github.com/JeroenDeDauw/FileFetcher) implementations.
 
 ## Usage
 

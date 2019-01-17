@@ -2,9 +2,9 @@
 
 declare( strict_types = 1 );
 
-namespace FileFetcher\Cache\Tests\Unit;
+namespace FileFetcher\Cache\Tests\Unit\PackagePrivate;
 
-use FileFetcher\Cache\PsrCacheFileFetcher;
+use FileFetcher\Cache\PackagePrivate\PsrCacheFileFetcher;
 use FileFetcher\FileFetchingException;
 use FileFetcher\InMemoryFileFetcher;
 use FileFetcher\ThrowingFileFetcher;
@@ -13,7 +13,7 @@ use Psr\SimpleCache\CacheException;
 use Psr\SimpleCache\CacheInterface;
 
 /**
- * @covers \FileFetcher\Cache\PsrCacheFileFetcher
+ * @covers \FileFetcher\Cache\PackagePrivate\PsrCacheFileFetcher
  *
  * @licence BSD-3-Clause
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

@@ -2,7 +2,7 @@
 
 declare( strict_types = 1 );
 
-namespace FileFetcher\Cache;
+namespace FileFetcher\Cache\PackagePrivate;
 
 use FileFetcher\FileFetcher;
 use FileFetcher\FileFetchingException;
@@ -10,10 +10,7 @@ use Psr\SimpleCache\CacheException;
 use Psr\SimpleCache\CacheInterface;
 
 /**
- * Decorator that caches files using psr/simple-cache.
- * https://packagist.org/packages/psr/simple-cache
- *
- * @since 1.0
+ * This class is package private and should not be bound to from outside this library.
  *
  * @licence BSD-3-Clause
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
