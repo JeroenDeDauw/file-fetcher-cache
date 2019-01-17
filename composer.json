@@ -2,6 +2,16 @@
 	"name": "jeroen/file-fetcher-cache",
 	"license": "GPL-2.0-or-later",
 	"description": "Provides a SimpleCache (PSR-16) decorator for file fetchers",
+	"keywords": [
+		"file_get_contents",
+		"file-fetcher",
+		"filefetcher",
+		"cache",
+		"caching",
+		"simple-cache",
+		"simplecache",
+		"psr-16"
+	],
 	"require": {
 		"php": ">=7.1",
 		"jeroen/file-fetcher": "~6.0|~5.0",

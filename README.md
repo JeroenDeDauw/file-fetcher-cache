@@ -55,3 +55,9 @@ To run all CI checks, execute
 You can also invoke PHPUnit directly to pass it arguments, as follows
 
     vendor/bin/phpunit --filter SomeClassNameOrFilter
+
+## Release notes
+
+### 1.0.0 (2019-01-17)
+
+Initial release with decorators for PSR-16 SimpleCache and jeroen/simple-cache.
