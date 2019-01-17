@@ -8,6 +8,7 @@ use FileFetcher\Cache\Factory;
 use FileFetcher\NullFileFetcher;
 use PHPUnit\Framework\TestCase;
 use Psr\SimpleCache\CacheInterface;
+use SimpleCache\Cache\SimpleInMemoryCache;
 
 /**
  * @covers \FileFetcher\Cache\Factory
@@ -37,6 +38,21 @@ class FactoryTest extends TestCase {
 			->willReturn( $stubValue );
 
 		return $cache;
+	}
+
+	public function testNewJeroenSimpleCacheFetcherReturnsFetcherThatUsesCache() {
+		$cache = new SimpleInMemoryCache();
+		$cache->set( 'whatever', '42' );
+
+		$cache = ( new Factory() )->newJeroenSimpleCacheFetcher(
+			new NullFileFetcher(),
+			$cache
+		);
+
+		$this->assertSame(
+			'42',
+			$cache->fetchFile( 'whatever' )
+		);
 	}
 
 }
