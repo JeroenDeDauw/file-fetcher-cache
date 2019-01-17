@@ -9,14 +9,7 @@ use FileFetcher\FileFetchingException;
 use SimpleCache\Cache\Cache;
 
 /**
- * Decorator that caches files using jeroen/simple-cache.
- * https://packagist.org/packages/jeroen/simple-cache
- *
- * Requires jeroen/simple-cache which is not loaded by default as of version 5.0
- *
- * See also: PsrCacheFileFetcher, which does the same thing, but with the more popular psr/simple-cache
- *
- * @since 3.0
+ * This class is package private and should not be bound to from outside this library.
  *
  * @licence BSD-3-Clause
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
