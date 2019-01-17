@@ -4,9 +4,11 @@ declare( strict_types = 1 );
 
 namespace FileFetcher\Cache;
 
+use FileFetcher\Cache\PackagePrivate\CachingFileFetcher;
 use FileFetcher\Cache\PackagePrivate\PsrCacheFileFetcher;
 use FileFetcher\FileFetcher;
 use Psr\SimpleCache\CacheInterface;
+use SimpleCache\Cache\Cache;
 
 /**
  * Public interface of jeroen/file-fetcher-cache.
@@ -34,6 +36,25 @@ class Factory {
 			$fetcher,
 			$cache,
 			$ttl
+		);
+	}
+
+	/**
+	 * Decorator that caches files using jeroen/simple-cache.
+	 * https://packagist.org/packages/jeroen/simple-cache
+	 * https://github.com/JeroenDeDauw/SimpleCache
+	 *
+	 * @since 1.0
+	 *
+	 * @param FileFetcher $fetcher
+	 * @param Cache $cache
+	 *
+	 * @return FileFetcher
+	 */
+	public function newJeroenSimpleCacheFetcher( FileFetcher $fetcher, Cache $cache ): FileFetcher {
+		return new CachingFileFetcher(
+			$fetcher,
+			$cache
 		);
 	}
 
