@@ -1,6 +1,10 @@
 # FileFetcher Cache
 
 [![Build Status](https://travis-ci.org/JeroenDeDauw/file-fetcher-cache.svg?branch=master)](https://travis-ci.org/JeroenDeDauw/file-fetcher-cache)
+[![Code Coverage](https://scrutinizer-ci.com/g/JeroenDeDauw/file-fetcher-cache/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/JeroenDeDauw/file-fetcher-cache/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/JeroenDeDauw/file-fetcher-cache/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/JeroenDeDauw/file-fetcher-cache/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/jeroen/file-fetcher-cache/version.png)](https://packagist.org/packages/jeroen/file-fetcher-cache)
+[![Download count](https://poser.pugx.org/jeroen/file-fetcher-cache/d/total.png)](https://packagist.org/packages/jeroen/file-fetcher-cache)
 
 Provides simple caching [decorators](https://en.wikipedia.org/wiki/Decorator_pattern)
 for [FileFetcher](https://github.com/JeroenDeDauw/FileFetcher) implementations.
