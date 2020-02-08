@@ -12,6 +12,13 @@
 		"simplecache",
 		"psr-16"
 	],
+	"authors": [
+		{
+			"name": "Jeroen De Dauw",
+			"email": "jeroendedauw@gmail.com",
+			"homepage": "https://EntropyWins.wtf",
+		}
+	],
 	"require": {
 		"php": ">=7.1",
 		"jeroen/file-fetcher": "~6.0|~5.0",
