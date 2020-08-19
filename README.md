@@ -1,6 +1,6 @@
 # FileFetcher Cache
 
-[![Build Status](https://travis-ci.org/JeroenDeDauw/file-fetcher-cache.svg?branch=master)](https://travis-ci.org/JeroenDeDauw/file-fetcher-cache)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/JeroenDeDauw/file-fetcher-cache/CI)](https://github.com/JeroenDeDauw/file-fetcher-cache/actions?query=workflow%3ACI)
 [![Code Coverage](https://scrutinizer-ci.com/g/JeroenDeDauw/file-fetcher-cache/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/JeroenDeDauw/file-fetcher-cache/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/JeroenDeDauw/file-fetcher-cache/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/JeroenDeDauw/file-fetcher-cache/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/jeroen/file-fetcher-cache/version.png)](https://packagist.org/packages/jeroen/file-fetcher-cache)
@@ -61,6 +61,10 @@ You can also invoke PHPUnit directly to pass it arguments, as follows
     vendor/bin/phpunit --filter SomeClassNameOrFilter
 
 ## Release notes
+
+### 1.0.1 (2020-08-19)
+
+* Updated attribution in composer.json
 
 ### 1.0.0 (2019-01-17)
 
