@@ -28,7 +28,7 @@ class PsrCacheFileFetcherTest extends TestCase {
 	private $ttl;
 	private $keyBuilder;
 
-	public function setUp() {
+	public function setUp(): void {
 		$this->fileFetcher = new InMemoryFileFetcher( [
 			self::FILE_URL => self::FILE_CONTENT
 		] );
