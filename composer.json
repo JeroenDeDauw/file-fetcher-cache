@@ -30,7 +30,7 @@
 
 		"ockcyp/covers-validator": "~1.0",
 		"squizlabs/php_codesniffer": "~3.3",
-		"slevomat/coding-standard": "~6.0",
+		"slevomat/coding-standard": "~7.2",
 		"mediawiki/mediawiki-codesniffer": "~39.0",
 		"phpstan/phpstan": "^1.0.0"
 	},
