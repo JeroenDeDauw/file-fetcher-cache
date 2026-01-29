@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        php: [7.2, 7.3, 7.4]
+        php: [8.0, 8.1, 8.2, 8.3, 8.4, 8.5]
 
     runs-on: ubuntu-latest
 
@@ -48,7 +48,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.5'
           extensions: mbstring
           tools: composer, cs2pr
 
@@ -81,7 +81,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: 8.5
           extensions: mbstring
           tools: composer, cs2pr
 
@@ -104,4 +104,3 @@ jobs:
 
       - name: Upload coverage.clover
         run: php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-
