@@ -62,6 +62,12 @@ You can also invoke PHPUnit directly to pass it arguments, as follows
 
 ## Release notes
 
+### 1.1.0 (2026-01-29)
+
+* Raised minimum PHP version to 8.0
+* Raised minimum psr/simple-cache to 2.0
+* Added support for psr/simple-cache 2 and 3
+
 ### 1.0.1 (2020-08-19)
 
 * Updated attribution in composer.json
